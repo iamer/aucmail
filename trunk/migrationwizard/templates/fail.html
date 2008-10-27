@@ -1,0 +1,61 @@
+{% extends "admin-index.html" %}
+    {% block content %}
+        <form method="post" id="filter" action="/wizard/admin/failed_state/1/">
+          <select name="filter-fail" >
+            <option value ="all-user" >All user</option>
+            <option value ="max-retry-user" >Max retry user</option>
+          </select>  
+         <input type="submit" id="filter-fail-state" value="Filter"/>
+        </form>
+        {% if all_users_name %}
+ <form  method="post" action="/wizard/admin/change_state/">
+            <table width="100%">
+                          <tr class="first-row"> 
+                            <td class="empty-td"><input type="checkbox" name="check_all"></td> 
+                            <td >Username</td> 
+                            {% if fwd_add %}
+                            {% ifequal fwd_add "true" %}
+                             <td>Fwd addresse</td>
+                             {% endifequal %}{%else%}
+                             <td>State</td>
+                             <td>Retry number</td>
+                             <td>Contacts total</td>
+                             <td>Mails total</td>
+                             <td>Migration start time</td>
+                             <td>Migration end time</td>
+                             {% endif %}
+      </tr>
+    {% for user in all_users_name %}
+                             <tr>
+                              <td class="first-col">
+                                <input type="checkbox" name="{{user.username}}" id="check_user_status">
+                              </td>
+                              <td class="first-col"> 
+                                <a href="/wizard/admin/user/{{user.id_id}}">{{user.username}}</a> 
+                              </td>
+                              {% ifequal fwd_add "true" %}
+                              <td>
+                                {{user.mail_fwd_address}}
+                              </td>
+                              {%else%}
+                              <td>{{user.state}}</td>
+                              <td>{{user.retry_number}}</td>
+                              <td>{{user.contacts_total}}</td>
+                              <td>{{user.mails_total}}</td>
+                              <td>{{user.migration_start_time}}</td>
+                              <td>{{user.migration_end_time}}</td>
+                              {%endifequal%}
+                              </td>
+                          </tr>
+  
+   {% endfor %}
+  </table>
+  {{link}}
+             <input type="submit" value="" id="change_status"/>
+         <br>
+     </form>
+
+  {% else %}
+  <h2>No users matched your search.</h2>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,290 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome to AUCmail</title>
+<link href="/wizard_media/css/style2.css" rel="stylesheet" type="text/css" />
+<link href="/wizard_media/css/progress.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/wizard_media/js/jquery.js"></script>
+<script type="text/javascript"  src="/wizard_media/js/jqueryprogressbar.js"></script>
+
+<script type="text/javascript" src="/wizard_media/js/expantion.js"></script>
+<script type="text/javascript">
+    var last_datetime = 'None';
+    function getQueuePlace(){
+      $.ajax({
+             type: "GET",
+             url :"/wizard/getqueueplace/" ,
+             async : false,
+             success: function(data){
+                 $("div[@id=queue-place]").html(data);
+             } 
+          });
+    }
+    function update(){
+      $.ajax({
+             type: "GET",
+             url :"/wizard/getupdate/" + last_datetime +'/',
+             async : false,
+             success: function(data){
+                if(data != 'done')
+                {  
+                  var splitted = data.split(':::::');
+                  var progress = parseInt(splitted[0]);
+                  var text_to_append = splitted[1];
+                  last_datetime = splitted[2];
+                  var contacts_currently_done = splitted[3];
+                  var total_contacts = splitted[4];
+                  var mails_done = splitted[5];
+                  var total_mails = splitted[6];
+                  var state = splitted[7];
+                  var estimate = splitted[8];
+                  var retry = splitted[9];
+                  var max_retry = splitted[10];
+
+                  if(state == "in_queue" || (state == "failed" && retry < max_retry)){
+                    $("div[@id=user-enqueued]").attr('style','display:block');
+                    $("div[@id=progress-contact]").attr('style','display:none');
+                    $("div[@id=progress-emails]").attr('style','display:none');
+                    $("#user-failed").attr('style','display:none');
+                    $("#estimated-time").attr('style','display:none');
+                  } else if(state == "in_progress"){
+                    $("div[@id=user-enqueued]").attr('style','display:none');
+                    $("div[@id=progress-contact]").attr('style','display:block');
+                    $("div[@id=progress-emails]").attr('style','display:block');
+                    $("#user-failed").attr('style','display:none');
+                    $("#estimated-time").attr('style','display:block');
+
+                    if(contacts_currently_done == total_contacts)
+                    {
+                      $("div[@id=contacts-exclamation-icon]").attr('style','display:none');
+                      $("div[@id=contacts-info-icon]").attr('style','display:none');
+                      $("div[@id=contacts-right-icon]").attr('style','display:block');
+                    }
+                    else if( contacts_currently_done == 0)
+                    {
+                      $("div[@id=contacts-exclamation-icon]").attr('style','display:block');
+                      $("div[@id=contacts-info-icon]").attr('style','display:none');
+                      $("div[@id=contacts-right-icon]").attr('style','display:none');
+                    }
+                    else if(contacts_currently_done < total_contacts )
+                    {
+                      $("div[@id=contacts-exclamation-icon]").attr('style','display:none');
+                      $("div[@id=contacts-info-icon]").attr('style','display:block');
+                      $("div[@id=contacts-right-icon]").attr('style','display:none');
+                    }
+
+
+                    if(mails_done == 0)
+                    {
+                      $("div[@id=emails-exclamation-icon]").attr('style','display:block');
+                      $("div[@id=emails-info-icon]").attr('style','display:none');
+                      $("div[@id=emails-right-icon]").attr('style','display:none');
+                    }
+                    else if(mails_done < total_mails )
+                    {
+                      $("div[@id=emails-exclamation-icon]").attr('style','display:none');
+                      $("div[@id=emails-info-icon]").attr('style','display:block');
+                      $("div[@id=emails-right-icon]").attr('style','display:none');
+                    }
+                    else if(mails_done == total_mails)
+                    {
+                      $("div[@id=emails-exclamation-icon]").attr('style','display:none');
+                      $("div[@id=emails-info-icon]").attr('style','display:none');
+                      $("div[@id=emails-right-icon]").attr('style','display:block');
+                    }
+
+                  }
+                  else if(state == 'failed')
+                  {
+                    $("div[@id=user-enqueued]").attr('style','display:none');
+                    $("div[@id=progress-contact]").attr('style','display:none');
+                    $("div[@id=progress-emails]").attr('style','display:none');
+                    $("#user-failed").attr('style','display:block');
+                    $("#estimated-time").attr('style','display:none');
+                  }
+
+                  $("#progressbar").reportprogress(progress);
+                  $("#estimated-time").html("Estimated Time Left: &nbsp; " + estimate);
+
+ 
+                  if(total_contacts != 0 && contacts_currently_done != 0){
+    				  $("#contact-progress").reportprogress(contacts_currently_done/total_contacts*100);
+                  } else if(total_contacts == 0 && contacts_currently_done == 0){
+    				  $("#contact-progress").reportprogress(100);
+                  } else {
+    				  $("#contact-progress").reportprogress(0);
+                  }
+
+                  if(total_mails != 0 && mails_done != 0){
+                    $("#email-progress").reportprogress(mails_done/total_mails*100);
+                  } else if(total_mails == 0 && mails_done == 0){
+                    $("#email-progress").reportprogress(100);
+                  }else {
+                    $("#email-progress").reportprogress(0);
+                  }
+                  $('div[@id=on-expande]').append(text_to_append);
+                  var objDiv = document.getElementById("on-expande");
+                  objDiv.scrollTop = objDiv.scrollHeight;
+
+                  } else {
+                    temp = window.location.toString();
+                    temp = temp.replace(/progress\//,'');
+                    window.location = temp;
+                }
+             }
+      });
+    }
+	jQuery(function($){
+	});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {  update() ;handle=setInterval("update()",30000); getQueuePlace() ; handle2=setInterval("getQueuePlace()",300000);});
+</script>
+</head>
+
+<body > 
+    <div id="page" >
+<div id="header">
+        	<div id="header-left">
+				<div id="logo">               
+                </div>
+            </div><!--header-left-->
+            <div id="header-right-3">
+            </div>
+            
+        </div><!--header-->
+        <div id="below-header">
+        	<div id="below-header-left">
+            	<div class="page-title2">Moving your old e-mails</div>
+          </div>
+            <div id="below-header-right">
+            	<div class="header-text">
+            	  <div align="justify">AUC and Google have formed a partnership to enhance communication with new technologies. This conversion program will convert your old-style AUC email account and its e-mail contents to the new <a href="">AUCmail powered by Google</a>. 
+           	    Follow the simple instructions, and you will soon have an array of new tools at your fingertips. </div>
+            	</div>
+          </div>
+        </div> <!--below-header-->
+        
+        <div id="login-container">
+        	<div id="login">
+        		<div id="login-left-line2">
+                    <div id="login-bottom-left-corner2">
+                        <div id="login-bottom-right-corner2">
+                            <div id="welcome">Welcome</div> 
+                            <div id="user"> {{username}}</div>
+                        </div>
+                    </div>
+            	</div>
+       		</div>
+            <br class="clear" />
+            <div id="feedback"><a href="/wizard/feedback/">&nbsp;</a></div>
+            <div id="faqs"><a href="/wizard/faqs/">&nbsp;</a></div>
+            <div id="logout"><a href="/wizard/logout/">&nbsp;</a></div>
+            <div id="logout-message"> <span id="heighlighted-message">Logout at anytime</span><br /> and login again to check on this<br /> process later.</div>
+           
+        </div>
+        
+        
+      <div id="main-page">
+   
+         <div id="progressbar">
+
+		</div>
+		<div style="font-size:14px;color:#990000;float:left;">This page will refresh every 30 seconds </div>
+        <div id="estimated-time">Estimated Time Left:  &nbsp; 00:00:00
+        </div>
+
+        
+        <div id="user-enqueued">
+        	<div id="enque-icon"></div>
+            <div id="enque-message">Please wait ... your migration has not started yet ... <br />
+            You are number&nbsp;   
+            	<div id="queue-place">
+                </div> &nbsp;in the queue 
+            </div>
+            
+            <div id="thanks-message">Thank you for your patience </div>
+            
+        </div>
+        
+        <div id="user-failed">
+       	  <!-- <div id="failed-icon"></div> -->
+            <div id="failed-message">There was a problem with your migration and an administrator has been notified. Meanwhile, you can start using your new aucmail account <a style="display:inline" href="http://mail.aucegypt.edu">here</a>.</div>	
+            <div id="error-message">Sorry for the inconvenience</div>
+        </div>
+        
+       	<div id="progress-contact">
+            <div id="contacts-right-icon" class="all-is-right-icon"></div>
+            <div id="contacts-info-icon" class="info-icon"></div>
+            <div id="contacts-exclamation-icon" class="exclamation-icon"></div>
+            <div class="result">
+                <div class="progress-title">Migrating Contacts . . .</div>
+                <div id="contact-progress" class="progress-text"></div>
+            </div>
+        </div>
+        <br class="clear" />
+        
+        <div id="progress-emails">
+            <div id="emails-right-icon" class="all-is-right-icon"></div>
+            <div id="emails-info-icon" class="info-icon"></div>
+            <div id="emails-exclamation-icon" class="exclamation-icon"></div>
+            <div class="result">
+                <div class="progress-title">Migrating Emails . . .</div>
+                <div id="email-progress" class="progress-text"></div>
+          </div>
+        </div>
+        
+          <br class="clear" />
+          
+      <div id="attachment-block">
+            	<div class="main-top-line">
+                	<div class="main-right-line">
+                    	<div class="main-bottom-line">
+                        	<div class="main-left-line">
+                            	<div class="main-top-left">
+                                    <div class="main-top-right">
+                                        <div class="main-bottom-right">
+                                            <div class="main-bottom-left">
+                                            	<div class="main-block-title">
+                                                <div class="main-block-text-title">Detailed Migration Report</div> <div class="three-dots"></div></div>
+                                                
+                                                <div  class="block-expansion-button"> <a>details</a></div>
+                                                <div class="click-here">click for</div>
+                                                <br class="clear" />
+                                                <div id="on-expande" class="migration-results">
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+        </div>
+        </div>
+	   
+
+       
+        
+      </div>  
+      <div id="footer">
+        <div id="footer-text">Developed by </div>
+        <div id="open-craft-logo"> <a href="http://www.open-craft.com"> &nbsp;</a> </div>
+        <div id="auc-footer"><strong>The American University in Cairo, 113 Kasr El Aini St., P.O. Box 2511, Cairo, 11511, Egypt.</strong> Telephone: 20.2.2615.1000 Fax: 20.2.2795.7565 <br />
+          <a href='http://www.aucegypt.edu/aboutauc/nyoffice/Pages/default.aspx'><strong>New York Office: 420 Fifth Avenue, Third Floor, New York, NY 10018-2729. </strong></a>Telephone: 1.212.730.8800 Fax: 1.212.730.1600        </div>
+      </div>
+    </div><!--page-->
+    
+      <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-2385745-6");
+        pageTracker._trackPageview();
+      </script>
+</body>
+</html>

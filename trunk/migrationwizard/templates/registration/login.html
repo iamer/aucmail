@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Log in | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <h2>Log in</h2>
+  <form class="regform" action="." method="post" accept-charset="utf-8">
+    {% if form.has_errors %}
+      <h3 class="error">Please enter a valid username and password.</h3>
+    {% endif %}
+    <h3><label for="id_username">Username:</label></h3>
+    <p>{{ form.username }}</p>
+    <h3><label for="id_password">Password:</label></h3>
+    <p>{{ form.password }} </p>
+    <p><input class="button", type="submit" value="Log in"></p>
+    <input type="hidden" name="next" value="{% if next %}{{ next|escape }}{% else %}/{% endif %}">
+  </form>
+{% endblock %}

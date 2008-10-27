@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome to AUCmail</title>
+<link href="/wizard_media/css/style2.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/wizard_media/js/jquery.js"></script>
+
+<script type="text/javascript">
+    function DisplaySpinner(){
+                 $("div[@id=spinner]").attr('style','display:block');
+    }
+</script>
+</head>
+
+<body>
+    <div id="page">
+        
+        <div id="header">
+        	<div id="header-left">
+				<div id="logo">               
+                </div>
+            </div><!--header-left-->
+            <div id="header-right">
+            </div>
+            
+         </div><!--header-->
+        <div id="below-header">
+        	<div id="below-header-left">
+            	<div class="page-title">
+               	  With AUCmail, you have access to <br />a suite of Google tools called <br />Google Apps              </div>
+          </div>
+            <div id="below-header-right">
+            	<div class="header-text">
+            	  <div align="justify">AUC and Google have formed a partnership to enhance communication with new technologies. This conversion program will convert your old-style AUC email account and its e-mail contents to the new <a href="">AUCmail powered by Google</a>. 
+           	    Follow the simple instructions, and you will soon have an array of new tools at your fingertips. </div>
+            	</div>
+          </div>
+      </div> <!--below-header-->
+       <div id="login-container"> 
+        <div id="login">
+        	
+        	<div id="login-left-line">
+                	<div id="login-bottom-left-corner">
+                   		 <div id="login-bottom-right-corner">
+                         <div id="login-expl-text">Please enter your AUC username and password below to login
+            </div>
+
+               	  		   <div id="login-form">
+							{% if message %}
+                            <div id="login-error-container">
+								{{message}}
+							</div>
+							{% endif %}
+                        <div id="spinner">
+                        <table><tr><td><div id="spinner-icon"></div></td><td><div id="spinner-text">authenticating...</div></td><tr></table>
+                        </div>
+						<form id="forml" method="post" accept-charset="utf-8" action="">
+						    {% if form.has_errors %}
+						      <h3 class="error">Please enter a valid username and password.</h3>
+						    {% endif %}
+							<div id="username_pass" style="margin-left: 30px; width:190px; *margin-left: 15px;">
+						    <label for="id_username" style="*margin-left: 15px;">AUC Username</label> <br />
+						    {{ form.username }}<br />
+						    <label for="id_password" style="*margin-left: 15px;">AUC Password</label><br />
+						    {{ form.password }}
+							 </div>
+						    
+
+						  
+				         	    
+							<input class="login-button-content" type="submit" value="" onclick="DisplaySpinner()"/>
+						   
+						</form>
+                      			</div>
+						                      
+				    </div>
+			</div>
+		</div>
+        </div>
+	</div>
+        
+        <div id="main-page">
+      		<div class="home-message-top-line">
+                <div class="home-message-right-line">
+                    <div class="home-message-bottom-line">
+                        <div class="home-message-left-line">
+                            <div class="home-message-top-left">
+                                <div class="home-message-top-right">
+                                    <div class="home-message-bottom-left">
+                                        <div class="home-message-bottom-right">
+
+                                	<div id="home-message-text" align="center" style="font-size:13px;">Your password should be at least 6 characters and of good strength. You can change it <a style="display:inline; text-decoration:underline;" href="http://sams10.aucegypt.edu/MigrateToGoogle/change.php" target="_blank">here</a> if needed.</div>
+       	
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+ 
+ 				       		<div class="home-message-top-line">
+                <div class="home-message-right-line">
+                    <div class="home-message-bottom-line">
+                        <div class="home-message-left-line">
+                            <div class="home-message-top-left">
+                                <div class="home-message-top-right">
+                                    <div class="home-message-bottom-left">
+                                        <div class="home-message-bottom-right">
+
+                                        <div id="home-message-text">With AUCmail you get all of this</div>
+                                       	
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
+            </div>
+          <table width="715" border="0" cellpadding="10">
+            <tr>
+              <td>
+              	<div id="icon-gmail" class="icon">
+                </div>
+                <div class="main-text">
+                	<div class="main-text-title">
+                     AUC Email for life
+                    </div>
+                    <div class="main-text-body">
+                    Keep your AUC e-mail address, but use Google's advanced e-mail interface.  It comes with a powerful spam filter and 7 gigabytes of storage.  You can keep this e-mail address for life, even after you've completed your academic studies at AUC.</div>
+                </div>
+              </td>
+              <td>
+                <div id="icon-calendar" class="icon">
+                </div>
+                <div class="main-text">
+                	<div class="main-text-title">
+                     Calendar
+                    </div>
+                    <div class="main-text-body">
+                    Organize your life, keep a calendar for yourself, share calendars with your friends and subscribe to public calendars to stay on top of events on campus. </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+              	<div id="icon-talk" class="icon">
+                </div>
+                <div class="main-text">
+                	<div class="main-text-title">Talk</div>
+                    <div class="main-text-body">IM with friends and classmates or make free voice calls with anyone on Google Talk anywhere in the world.</div>
+                </div>              
+              </td>
+              <td>
+              	<div id="icon-docs" class="icon">
+                </div>
+                <div class="main-text">
+                	<div class="main-text-title">
+                     Docs</div>
+                    <div class="main-text-body">Create and share documents, spreadsheets and presentations online, or download them using your favourite desktop applications.  Great for collaborative projects, in and out of class.</div>
+                </div>
+              </td>
+            </tr>
+            
+          </table>
+      </div>
+        
+        <div id="footer">
+        <div id="footer-text">Developed by </div>
+        <div id="open-craft-logo"><a href="http://www.open-craft.com"> &nbsp;</a></div>
+        <div id="auc-footer"><strong>The American University in Cairo, 113 Kasr El Aini St., P.O. Box 2511, Cairo, 11511, Egypt.</strong> Telephone: 20.2.2615.1000 Fax: 20.2.2795.7565 <br />
+          <a href='http://www.aucegypt.edu/aboutauc/nyoffice/Pages/default.aspx'><strong>New York Office: 420 Fifth Avenue, Third Floor, New York, NY 10018-2729. </strong></a>Telephone: 1.212.730.8800 Fax: 1.212.730.1600        </div>
+      </div>
+    </div><!--page-->
+
+      <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-2385745-6");
+        pageTracker._trackPageview();
+      </script>
+
+</body>
+</html>

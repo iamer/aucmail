@@ -1,0 +1,34 @@
+{% extends "admin-index.html" %}
+{% block content %}
+{% if all_users_name %}
+                    <table width="100%">
+                          <tr class="first-row"> 
+                            <td >Username</td> 
+                            <td>State</td>
+                            <td>Retry number</td>
+                            <td>Contacts total</td>
+                            <td>Mails total</td>
+                            <td>Migration start time</td>
+                            <td>Migration end time</td>
+                          </tr>
+                        {% for user in all_users_name %}
+                          <tr>
+                              <td class="first-col"> 
+                                <a href="/wizard/admin/user/{{user.id_id}}">{{user.username}}</a> 
+                              </td>
+                              <td>{{user.state}}</td>
+                              <td>{{user.retry_number}}</td>
+                              <td>{{user.contacts_total}}</td>
+                              <td>{{user.mails_total}}</td>
+                              <td>{{user.migration_start_time}}</td>
+                              <td>{{user.migration_end_time}}</td>
+                          </tr>
+                        {% endfor %}
+                        {% if check_user %}
+                        <h3>The status for user(s)</h3>{% for x in check_user %}<b>{{x}}</b>{% endfor %}<h3>chnages to {{status_action}}	
+                        </h3>
+                        {% endif %}
+                      </table> 
+  <tr>{{link}}</tr>
+  {% endif %}
+{% endblock %}

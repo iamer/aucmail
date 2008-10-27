@@ -1,0 +1,53 @@
+{% extends "admin-index.html" %}
+    {% block content %}
+    {% if all_users_name %}
+        <table width="100%">
+                          <tr class="first-row"> 
+                            <td >Username</td> 
+                            {% if fwd_add %}
+                            {% ifequal fwd_add "true" %}
+                             <td>Fwd addresse</td>
+                             {% endifequal %}{%else%}
+                             <td>State</td>
+                             <td>Retry number</td>
+                             <td>Contacts total</td>
+                             <td>Mails total</td>
+                             <td>Migration start time</td>
+                             {% ifequal report_title "Done" %}
+                             <td>Migration end time</td>
+                             {% endifequal %}
+                             <td>Mails uploaded</td>
+                             <td>Contacts added</td>
+                             {% endif %}
+      </tr>
+    {% for user in all_users_name %}
+                             <tr>
+                              <td class="first-col"> 
+                                <a href="/wizard/admin/user/{{user.id_id}}">{{user.username}}</a> 
+                              </td>
+                              {% ifequal fwd_add "true" %}
+                              <td>
+                                {{user.mail_fwd_address}}
+                              </td>
+                              {%else%}
+                              <td>{{user.state}}</td>
+                              <td>{{user.retry_number}}</td>
+                              <td>{{user.contacts_total}}</td>
+                              <td>{{user.mails_total}}</td>
+                              <td>{{user.migration_start_time}}</td>
+                             {% ifequal report_title "Done" %}
+                              <td>{{user.migration_end_time}}</td>
+                              {% endifequal %}
+                              <td>{{user.mails_uploaded}}</td>
+                              <td>{{user.contacts_added}}</td>
+                              {%endifequal%}
+                              </td>
+                          </tr>
+  
+   {% endfor %}
+  </table>
+  {{link}}
+  {% else %}
+  <h2>No users matched your search.</h2>
+  {% endif %}
+{% endblock %}
