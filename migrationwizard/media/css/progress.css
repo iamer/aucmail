@@ -1,0 +1,89 @@
+/* CSS Document */
+
+/* progress bar container */
+	#progressbar{
+	width:710px;
+	height:40px;
+	position:relative;
+	color:black;
+	background-image: url(/wizard_media/images2/migration-bar-empty.gif);
+	background-repeat:no-repeat;
+	margin: 0 0 10px 0;
+	background-repeat: no-repeat;
+	font-weight: bolder;
+	}
+	/* color bar */
+	#progressbar div.progress{
+	position:absolute;
+	width:0;
+	height:100%;
+	overflow:hidden;
+	background-image:url(/wizard_media/images2/migration-bar-full.gif);
+	background-repeat:no-repeat;
+	}
+	/* text on bar */
+	#progressbar div.progress .text{
+		position:absolute;
+		text-align:center;
+		margin-top: 10px;
+		color:white;
+		font-family:arial;
+		font-weight: bolder;
+	}
+	/* text off bar */
+	#progressbar div.text{
+		margin-top: 10px;
+		position:absolute;
+		width:100%;
+		height:100%;
+		text-align:center;
+		font-weight: bolder;
+		color:#000000;
+		
+	}
+	/*contact and email*/
+	
+	#contact-progress, #email-progress{
+	font-size: 13px;
+	width:298px;
+	position:relative;
+	color:black;
+	background-image: url(/wizard_media/images2/email-contact-progress-none.jpg);
+	background-repeat:no-repeat;
+	margin: 0 0 0px 0;
+	font-weight: bolder;
+	}
+	
+	/* color bar */
+	#contact-progress div.progress, #email-progress div.progress{
+	position:absolute;
+	width:0;
+	height:100%;
+	overflow:hidden;
+	background-image: url(/wizard_media/images2/email-contact-progress-full.jpg);
+	background-repeat:no-repeat;
+	}
+
+	
+	/* text on bar */
+	#contact-progress div.progress .text, #email-progress div.progress .text{
+
+		position:absolute;
+		text-align:center;
+		margin-top: 2px;
+		color:white;
+		font-family:arial;
+		font-weight: bolder;
+	}
+
+	/* text off bar */
+	#contact-progress div.text, #email-progress div.text{
+		margin-top: 2px;
+		position:absolute;
+		width:100%;
+		height:100%;
+		text-align:center;
+		font-weight: bolder;
+		color:#000000;
+		
+	}

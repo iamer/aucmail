@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Welcome to AUCmail</title>
+<link href="/wizard_media/css/style2.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"  src="/wizard_media/js/jquery.js"></script>
+<script type="text/javascript" src="/wizard_media/js/expantion.js"></script>
+<style type="text/css">
+<!--
+.style1 {
+	color: #E3A314;
+	font-weight: bold;
+}
+.style2 {
+	color: #E3A314;
+	font-weight: bold;
+}
+.style3 {
+	color: #00AEEF;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+<body>
+    <div id="page">
+        <div id="header">
+        	<div id="header-left">
+			  <div id="logo">               
+              </div>
+            </div><!--header-left-->
+            <div id="header-right-2">
+          </div>
+            
+        </div><!--header-->
+        <div id="below-header">
+        	<div id="below-header-left">
+            	<div class="page-title2">Preparing your e-mail</div>
+          </div>
+            <div id="below-header-right">
+            	<div class="header-text">
+            	  <div align="justify">AUC and Google have formed a partnership to enhance communication with new technologies. This conversion program will convert your old-style AUC email account and its e-mail contents to the new <a href="">AUCmail powered by Google</a>. 
+           	    Follow the simple instructions, and you will soon have an array of new tools at your fingertips. </div>
+           	  </div>
+          </div>
+        </div> <!--below-header-->
+        
+        <div id="login-container">
+        	<div id="login">
+        		<div id="login-left-line2">
+                    <div id="login-bottom-left-corner2">
+                        <div id="login-bottom-right-corner2">
+                            <div id="welcome">Welcome</div> 
+                            <div id="user"> {{username}}</div>
+                      </div>
+                    </div>
+            	</div>
+       		</div>
+   			<div class="clear-left"></div>
+            <div id="feedback"><a href="/wizard/feedback/">&nbsp;</a></div>
+            <div id="faqs"><a href="/wizard/faqs/">&nbsp;</a></div>
+            <div id="logout"><a href="/wizard/logout/">&nbsp;</a></div>
+      </div>
+        
+        
+        <div id="main-page">
+        
+        <div id="note-bar">
+        	<div id="note-bar-right-line">
+            	<div id="note-bar-bottom-line">
+                	<div id="note-bar-left-line">
+                    	<div id="note-bar-left-top">
+                        	<div id="note-bar-right-top">
+                           	  <div id="note-bar-right-bottom">
+                               	  <div id="note-bar-left-bottom"> Please do not change your password during the migration. <br /> You should logout from any AUC webmail window now.</div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% if captcha %}
+ <div id="captcha-block">
+            	<div class="main-top-line">
+                	<div class="main-right-line">
+                    	<div class="main-bottom-line">
+                        	<div class="main-left-line">
+                            	<div class="main-top-left">
+                                    <div class="main-top-right">
+                                        <div class="main-bottom-right">
+                                            <div class="main-bottom-left">
+												<div class="exclamation-icon" style="display:block;"></div>
+                                              <div class="main-block-title main-block-text-title">UNLOCK ACCOUNT</div> 
+                                                    <div class="three-dots"></div>
+                                                    <div class="main-block-text">You need to unlock your account using <a href='https://www.google.com/a/aucegypt.edu/UnlockCaptcha' target='_blank'>this page</a>. </div>
+                                            		<br class="clear" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+            </div>
+{% endif %}
+                  <div id="empty-folder-block">
+            	<div class="main-top-line">
+                	<div class="main-right-line">
+                    	<div class="main-bottom-line">
+                        	<div class="main-left-line">
+                            	<div class="main-top-left">
+                                    <div class="main-top-right">
+                                        <div class="main-bottom-right">
+                                            <div class="main-bottom-left">
+												<div class="info-icon" style="display:block;"></div>
+                                              <div class="main-block-title">NOTE</div> 
+                                                    <div class="three-dots"></div>
+                                                    <div class="main-block-text">Empty folders will not be moved to your new AUCmail </div>
+                                            		<br class="clear" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+            </div>
+        
+          <div id="attachment-block">
+            	<div class="main-top-line">
+                	<div class="main-right-line">
+                    	<div class="main-bottom-line">
+                        	<div class="main-left-line">
+                            	<div class="main-top-left">
+                                    <div class="main-top-right">
+                                        <div class="main-bottom-right">
+                                            <div class="main-bottom-left">
+												{% if large_attachments %}
+												
+                                                <div class="main-block-title">
+                                                	<div class="info-icon" style="display:block;"></div>
+                                                    <div class="main-block-text-title">ATTACHMENTS</div> 
+                                                    <div class="three-dots"></div>
+                                                    <div class="main-block-text">
+                                                    <div class="error-title">Information:</div> &nbsp; found 
+                                                	<span class="number-of-emails">{{large_attachments}}</span>
+                                                    e-mail(s) larger than 20MB
+                                                </div></div>
+                                                
+                                              
+                                                
+                                             
+               							    <br class="clear"/>
+                                                <div class="main-block-text2">Any email <span class="style3">larger than 20MBs</span> will be moved to secure storage location accessable from inside the email</div>
+                                                <br class="clear" />
+                                              
+                                         
+
+												{% else %}
+
+                                            	
+                                              <div class="main-block-title">
+                                                <div class="all-is-right-icon"></div>
+                                              	<div class="main-block-text-title">ATTACHMENTS</div> 
+                                                <div class="three-dots"></div>
+                                                <div class="main-block-text" style="color:#000000">
+                                                	All your attachments are within the size limit. </div>
+                                              </div>
+                                                
+                                                
+                        <br class="clear"/>
+
+
+												{% endif %}
+                                            	
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+            </div>
+            <div id="mailbox-size-block">
+            	<div class="main-top-line">
+                	<div class="main-right-line">
+                    	<div class="main-bottom-line">
+                        	<div class="main-left-line">
+                            	<div class="main-top-left">
+                                    <div class="main-top-right">
+                                        <div class="main-bottom-right">
+                                            <div class="main-bottom-left">
+												{% if large_mailbox %}
+                                             	
+                                              <div class="main-block-title">
+                                                <div class="exclamation-icon"></div>
+                                                <div class="main-block-text-title">MAIL BOX SIZE</div> 
+                                                <div class="three-dots"></div>
+                                                <div class="main-block-text">
+                                                	<span class="style1">Attention! </span>
+                                                    Your action is needed.
+                                                </div>
+                                             </div>
+                                       
+                                                 
+                                            
+                                                <br class="clear"/>
+                                               
+                                                <div class="main-block-text2">Your mail box size <span class="style2">exceeded the 7GBs</span>, and cannot be moved<br />
+                                                You will be contacted soon about resolving this issue.</div>
+ 
+                      <br class="clear"/>
+												{% else %}
+                                            	
+                                              <div class="main-block-title">
+                                              	<div class="all-is-right-icon"></div>
+                                                <div class="main-block-text-title">MAIL BOX SIZE</div> 
+                                                <div class="three-dots"></div>
+                                                <div class="main-block-text">Your mailbox is within the size limit.</div>
+                                              </div>
+                                                
+                                                
+          <br class="clear"/>
+												{% endif %}
+                                            	
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>	
+            </div>
+      {% if large_mailbox or captcha %}
+		<div id="retry-button"><a href='/wizard/migrate/' ></a></div>
+        <div id="text-for-retry-button">When the above problems have been resolved,  click on the &quot;Retry&quot; button </div>
+        {% else %}
+        
+          <div id="start-migration-button"><a href='/wizard/start/' ></a></div>
+        <div id="text-for-start-button">Note that after you click the“Start Moving” button, you can logout at any time and migration will continue in the background</div>
+		{% endif %}
+        </div>
+               
+	   
+
+        
+<div id="footer">
+        <div id="footer-text">Developed by </div>
+        <div id="open-craft-logo"><a href="http://www.open-craft.com"> &nbsp;</a></div>
+        <div id="auc-footer"><strong>The American University in Cairo, 113 Kasr El Aini St., P.O. Box 2511, Cairo, 11511, Egypt.</strong> Telephone: 20.2.2615.1000 Fax: 20.2.2795.7565 <br />
+          <a href='http://www.aucegypt.edu/aboutauc/nyoffice/Pages/default.aspx'><strong>New York Office: 420 Fifth Avenue, Third Floor, New York, NY 10018-2729. </strong></a>Telephone: 1.212.730.8800 Fax: 1.212.730.1600        </div>
+      </div>
+    </div><!--page-->
+    
+      <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+        var pageTracker = _gat._getTracker("UA-2385745-6");
+        pageTracker._trackPageview();
+      </script>
+
+</body>
+</html>

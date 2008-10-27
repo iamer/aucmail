@@ -1,0 +1,862 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#auc-logo {
+	background-image: url(/wizard_media/images/auc-logo.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 22.7px;
+	margin: 5px 0 3px 5px;
+}
+#header {
+	background-image: url(/wizard_media/images/header-red-line.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	height: 225px;
+	width: 100%;
+}
+
+
+#header2 {
+	background-image: url(/wizard_media/images/header-blue-line.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	height: 225px;
+	width: 100%;
+}
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color:#FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#page {
+	width: 1024px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+table {
+	background-color: #FFFFFF;
+}
+
+td {
+	width: 50%;
+	vertical-align: top;
+}
+#page  #header-left {
+	width: 480px;
+	background-color: #CCA147;
+	background-image: url(/wizard_media/images/header-bottom-line.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	float: left;
+}
+#page  #header-left #header-top-right-corner {
+	background-image: url(/wizard_media/images/header-top-right-corner.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+#page #header-bottom-left-corner {
+	background-image: url(/wizard_media/images/header-bottom-left-corner.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: 225px;	
+}
+#page #header-left #header-top-right-corner #header-bottom-right-corner {
+	background-image: url(/wizard_media/images/header-bottom-right-corner.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+#page #header-right {
+	background-image: url(/wizard_media/images/header-right-image.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: 225px;
+	width: 416px;
+	float: left;
+}
+
+#page #header-right2 {
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: 225px;
+	float: left;
+	width: 544px;
+}
+
+#page #below-header {
+	background-image: url(/wizard_media/images/below-header-right.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	height: 96px;
+	width: 100%;
+}
+#page #below-header #below-header-left {
+	background-image: url(/wizard_media/images/below-header.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	float: left;
+	height: 96px;
+	width: 480px;
+	text-align: center;
+}
+#page #header-left #header-top-left-corner {
+	background-image: url(/wizard_media/images/header-top-left-corner.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#page #login #login-bottom-left-corner #login-bottom-right-corner {
+	float: left;
+	height: 231px;
+	width: 253px;
+	background-image: url(/wizard_media/images/login-bottom-right-corner.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+#page #login #login-bottom-left-corner {
+	background-image: url(/wizard_media/images/login-left-bottom-corner2.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: 231px;
+}
+#page #login {
+	background-image: url(/wizard_media/images/login-bottom-line.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	background-color: #00789C;
+	height: 231px;
+	width: 253px;
+}
+#page #login #login-left-line {
+	background-image: url(/wizard_media/images/login-left-line.gif);
+	background-repeat: repeat-y;
+	background-position: left top;
+}
+
+/*page2*/
+#page #login-bottom-right-corner2 {
+	height: 100%;
+	width: 253px;
+	background-image: url(/wizard_media/images/login-bottom-right-corner2.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	padding-bottom: 10px;
+}
+#page #login-bottom-left-corner2 {
+	background-image: url(/wizard_media/images/login-left-bottom-corner3.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: auto;
+}
+#page #login2 {
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	background-color: #00789C;
+	width: 253px;
+}
+#page #login-left-line2 {
+	background-image: url(/wizard_media/images/login-left-line.gif);
+	background-repeat: repeat-y;
+	background-position: left top;
+}
+/**/
+#page #main-page2 {
+	float: left;
+	width: 750px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+#page #main-page {
+	float: left;
+	width: 761px;
+}
+#page #icon-gmail {
+	background-image: url(/wizard_media/images/gmail.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	
+}
+#page .main-text {
+	float:left;
+	margin-left:5px;
+	width:307px;
+}
+#page .icon {
+	float: left;
+	height: 40px;
+	width: 42px;
+}
+#page #icon-more {
+	background-image: url(/wizard_media/images/google-more.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#page .main-text .main-text-title {
+	font-family: "Arial Black";
+	font-size: 19px;
+	font-weight: normal;
+	color: #000000;
+}
+#page .main-text .main-text-body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	text-align: justify;
+	margin-top: 10px;
+}
+#page #below-header #below-header-right {
+	float: left;
+	width: 544px;
+	height: 96px;
+}
+#page #icon-calendar {
+	background-image: url(/wizard_media/images/google-cal.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#page #icon-talk {
+	background-image: url(/wizard_media/images/google-talk.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#page #icon-docs {
+	background-image: url(/wizard_media/images/google-docs.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#page #icon-home {
+	background-image: url(/wizard_media/images/google-start-page.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#page #footer {
+	background-image: url(/images2/footer.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	float: left;
+	width: 1024px;
+	height: 46px;
+	margin-top: 15px;
+	text-align: center;
+	vertical-align: bottom;
+	color: #96742F;
+	font-size: 11px;
+	margin-bottom: 0px;
+	background-color: #F3E3AD;
+}
+#page #footer #footer-text {
+	width: 512px;
+	margin-top: 20px;
+	text-align: right;
+	float: left;
+
+}
+#page #footer #open-craft-logo {
+	width: 510px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	float: right;
+	text-align: left;
+	background-image: url(/images2/open-craft-logo.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 30px;
+	margin-top: 12px;
+}
+#page  #header-bottom-left-corner #logo {
+	height: 200px;
+	background-image: url(/wizard_media/images/LOGO.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	width: 460px;
+}
+#page #footer #open-craft-logo {
+	background-image: url(/wizard_media/images/open-craft-logo.gif);
+	background-position: left;
+	height: 40px;
+	background-repeat: no-repeat;
+	float: left;
+	width: 48%;
+	margin-left: 3px;
+	margin-top: 5px;
+}
+#page #login #login-left-line #login-bottom-left-corner #login-bottom-right-corner #login-form {
+	width: 80%;
+	margin-left: 30px;
+	color: #EBD178;
+	font-size: 21px;
+	height: 100%;
+}
+#page #below-header #below-header-left .page-title {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 26px;
+	color: #701E27;
+	text-decoration: none;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 10px;
+}
+#page #login #login-left-line #login-bottom-left-corner #login-bottom-right-corner #login-form #username-field {
+	margin-bottom: 10px;
+	height: 25px;
+}
+
+#page #login #login-left-line #login-bottom-left-corner #login-bottom-right-corner #login-button-content {
+	background-image:url(/wizard_media/images/login-button.gif);
+	background-position:left bottom;
+	background-repeat:no-repeat;
+	margin-left:115px;
+	width:70px;
+	height: 40px;
+	margin-top: 10px;
+	margin-right: 15px;
+}
+
+#page #login #login-left-line #login-bottom-left-corner #login-bottom-right-corner #login-form #password {
+	height: 25px;
+}
+#page #login #login-left-line #login-bottom-left-corner #login-bottom-right-corner #login-form #login-button-content:hover {
+	background-image: url(/wizard_media/images/login-button-hover.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+#page #below-header #below-header-right .header-text {
+	margin: 0 10px;
+	color: #EBD178;
+	font-size: 15px;
+	text-align: justify;
+	font-weight: 100;
+}
+
+#page #below-header #below-header-right .header-text2 {
+	margin: 10px 10px;
+	color: #EBD178;
+	font-size: 15px;
+	text-align: justify;
+	font-weight: 100;
+}
+#page  #header-left #header-top-left-corner #header-top-right-corner #header-bottom-right-corner2 {
+	background-image: url(/wizard_media/images/header-bottom-right-corner2.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+#page  #header-right2 #user-location {
+	background-image: url(/wizard_media/images/user-location.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 140px;
+}
+
+/*page-3*/
+#page  #header-right2 #user-location-2 {
+	background-image:url(/wizard_media/images/user-location3.jpg);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 140px;
+}
+/**/
+
+#page #header2 #header-right2 #header-text-up {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #EBD178;
+	margin: 5px 10px;
+	text-align: justify;
+	font-weight: 100;
+}
+#page  #user {
+	font-family: arial;
+	font-size: 18px;
+	color: #CCA147;
+	font-weight: 300;
+	margin-left: 30px;
+	margin-right: 15px;
+}
+#page  #welcome {
+	display: inline;
+	margin-left: 30px;
+	font-family:arial;
+	font-weight:300;
+	font-size: 21px;
+	color: #FFFFFF;
+}
+
+#page #login-area #logout:hover{
+	background-image: url(/wizard_media/images/logout2-hov.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+#page #login-area #faqs:hover {
+	background-image:url(/wizard_media/images/faqs2-hov.gif);
+	background-repeat:no-repeat;
+	background-position:left top;
+	}
+#page #login-area #logout {
+	float: left;
+	background-image: url(/wizard_media/images/logout2.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+	width: 89px;
+	height: 30px;
+	margin-left: 30px;
+	margin-top: 2px;
+}
+#page #login-area #clear-both {
+	clear: right;
+}
+#page #login-area #faqs {
+	background-image:url(/wizard_media/images/faqs2.gif);
+	background-repeat:no-repeat;
+	background-position:left top;
+	width: 89px;
+	height: 30px;
+	float: left;
+	margin-left: 2px;
+	margin-top: 2px;
+}
+#page #login-area .clear-left {
+	clear: left;
+}
+#page .main-left {
+	text-align: center;
+}
+#page .main-right {
+}
+#page .main-left #choice1-text {
+	width: 50%;
+	margin-left: 25%;
+	font-size: 18px;
+}
+#page .main-left #choice1-text p {
+	margin: 0px;
+	padding: 0px;
+}
+#page .main-left #choice1-text #green-text {
+	font-size: 20px;
+	color: #589E44;
+}
+#page .main-left #choice1-button {
+	background-image: url(/wizard_media/images/start-process.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	width: 100%;
+	height: 80px;
+	margin-top: 25px;
+}
+
+#page .main-right #choice2-text {
+	width: 50%;
+	margin-left: 25%;
+	font-size: 18px;
+	text-align: center;
+}
+
+#page .main-right #choice2-text p {
+	margin: 0px;
+	padding: 0px;
+}
+#page .main-right #choice2-text #blue-text {
+	font-size: 20px;
+	color: #00AEEF;
+}
+#page .main-right #choice2-button {
+	background-image: url(/wizard_media/images/freshstart.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	width: 100%;
+	height: 80px;
+	margin-top: 25px;
+}
+#page .main-left #choice1-button:hover {
+	background-image: url(/wizard_media/images/start-process-hover.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#page .main-right #choice2-button:hover {
+	background-image: url(/wizard_media/images/freshstart-hover.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+#page #main-page2 #imap-block {
+	width: 741px;
+	margin-bottom: 10px;
+}
+#page #main-page2 #attachment-block {
+	width: 741px;
+	margin-bottom: 10px;
+}
+#page #main-page2 #mailbox-size-block {
+	width: 741px;
+	margin-bottom: 10px;
+}
+#page .main-top-line .main-right-line .main-bottom-line .main-left-line .main-top-left .main-top-right .main-bottom-right .main-bottom-left {
+	height: 100%;
+	width: 95%;
+	background-image: url(/wizard_media/images/main-bottom-left.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	padding: 20px;
+	color: #00789C;
+}
+#page  .main-top-line {
+	background-image: url(/wizard_media/images/main-top-line.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+}
+#page .main-top-line .main-right-line {
+	background-image: url(/wizard_media/images/main-right-line.gif);
+	background-repeat: repeat-y;
+	background-position: right top;
+}
+#page .main-top-line .main-right-line .main-bottom-line {
+	background-image: url(/wizard_media/images/main-bottom-line.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+}
+#page .main-top-line .main-right-line .main-bottom-line .main-left-line {
+	background-image: url(/wizard_media/images/main-left-line.gif);
+	background-repeat: repeat-y;
+	background-position: left top;
+}
+#page .main-top-line .main-right-line .main-bottom-line .main-left-line .main-top-left {
+	background-image: url(/wizard_media/images/main-top-left.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#page  .main-top-line .main-right-line .main-bottom-line .main-left-line .main-top-left .main-top-right {
+	background-image: url(/wizard_media/images/main-top-right.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+#page .main-top-line .main-right-line .main-bottom-line .main-left-line .main-top-left .main-top-right .main-bottom-right {
+	background-image: url(/wizard_media/images/main-bottom-right.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+#page  .all-is-right-icon {
+	background-image: url(/wizard_media/images/all-is-right-icon.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 37px;
+	height: 35px;
+	display: none;
+	float: left;
+}
+
+#page  .exclamation-icon {
+	background-image: url(/wizard_media/images/exclamation-icon.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 37px;
+	height: 35px;
+	display: none;
+	float: left;
+}
+
+#page  .info-icon {
+	background-image: url(/wizard_media/images/info-icon.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 37px;
+	height: 35px;
+	display: none;
+	float: left;
+}
+#page  .main-block-title {
+	font-size: 15px;
+	color: #770020;
+	width: auto;
+	float: left;
+	margin-bottom: 10px;
+}
+#page .three-dots {
+	background-image: url(/wizard_media/images/threedots.gif);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	height: 15px;
+	width: 35px;
+	margin-left: 5px;
+	margin-right: 10px;
+	float: left;
+}
+#page  .main-block-text {
+	font-size: 15px;
+	color: #000000;
+	margin-top: 8px;
+	float: left;
+}
+
+#page  .main-block-text2 {
+	font-size: 15px;
+	color: #000000;
+	margin-left: 42px;
+	float: left;
+	margin-bottom: 10px;
+	width: auto;
+}
+
+#page  .main-block-text3 {
+	font-size: 15px;
+	color: #000000;
+	margin-left: 3px;
+	float: left;
+}
+.clear {
+	clear: both;
+}
+#page #start-migration-button {
+	float: right;
+	background-image: url(/wizard_media/images/start-migration-button.gif);
+	background-repeat: repeat;
+	background-position: left top;
+	width: 212px;
+	height: 57px;
+	margin-right: 20px;
+}
+
+#page #retry-button {
+	float: right;
+	background-image: url(/wizard_media/images/retry-button.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	width: 87px;
+	height: 57px;
+	margin-right: 20px;
+}
+#page #main-page2 #text-for-start-button {
+	float: right;
+	text-align: justify;
+	width: 340px;
+	direction: rtl;
+	font-size: 15px;
+	color: #00789C;
+	margin-right: 10px;
+}
+
+#page #main-page2 #text-for-retry-button {
+	float: right;
+	text-align: justify;
+	width: 380px;
+	direction: rtl;
+	font-size: 15px;
+	color: #F1AF37;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#page  #start-migration-button:hover {
+	background-image: url(/wizard_media/images/start-migration-button-hover.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+#page  #retry-button:hover {
+	background-image:url(/wizard_media/images/retry-hover.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#page #login-containter {
+	float: left;
+}
+#page .error-title {
+	float: left;
+	color: #00AEEF;
+	margin-top: 8px;
+	margin-right: 3px;
+}
+
+#page .error-title-orange {
+	float: left;
+	color: #F0AC2F;
+	margin-top: 8px;
+	margin-right: 3px;
+}
+#page .number-of-emails {
+	float: left;
+	color: #00AEEF;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 8px 5px 0 5px;
+}
+
+#page .number-of-emails2 {
+	float: left;
+	color: #00AEEF;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0px 5px 0 5px;
+}
+
+#page .text-orange {
+	float: left;
+	color: #F0AC2F;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0px 5px 0 5px;
+}
+
+#page .block-expansion-button {
+	float: right;
+	color: #00789C;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0px 0px 0 5px;
+	display: block;
+}
+#page #main-page2 #attachment-block .main-top-line .main-right-line .main-bottom-line .main-left-line .main-top-left .main-top-right .main-bottom-right .main-bottom-left #on-expande {
+display:none;
+}
+#page #login-area {
+}
+#page #login-area {
+	float: left;
+}
+#page #main-page2 #attachment-block .main-top-line .main-right-line .main-bottom-line .main-left-line .main-top-left .main-top-right .main-bottom-right .main-bottom-left .migration-results {
+	width: 701px;
+	height: 200px;
+	overflow:auto;
+	color: #666666;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+
+#page #main-page2 .progress-title {
+	float: left;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #00789C;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+#page #main-page2 .progress-text {
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	float: right;
+}
+
+#page #main-page2 .c-text {
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+
+#page #main-page2 .e-text {
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+}
+#page #main-page2 .result {
+	float: left;
+	width: 67%;
+	margin-top: 10px;
+}
+#page #main-page2 #progress-contact {
+	float: left;
+	width: 96%;
+	margin-bottom: 10px;
+	padding-left: 5px;
+	display: block;
+}
+#page #main-page2 #progress-emails {
+	float: left;
+	width: 96%;
+	margin-bottom: 10px;
+	padding-left: 5px;
+}
+#page #main-page2 #user-enqueued {
+	float: left;
+	width: 100%;
+}
+#page #main-page2 #user-enqueued #enque-icon {
+	background-image: url(/wizard_media/images/enque-icon.gif);
+	float: left;
+	height: 73px;
+	width: 73px;
+}
+#page #main-page2 #user-enqueued #enque-message {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #666666;
+	float: left;
+	margin-top: 5px;
+	margin-left: 10px;
+	line-height: 24px;
+}
+#page #main-page2 #user-enqueued #thanks-message {
+	font-weight: bold;
+	color: #CCA147;
+	width: 65%;
+	margin-left: 10px;
+	float: left;
+}
+
+#page #main-page2 #user-failed{
+	float: left;
+	width: 100%;
+}
+#page #main-page2 #user-failed #failed-icon {
+	background-image: url(/wizard_media/images/error-in-progress.gif);
+	float: left;
+	height: 73px;
+	width: 73px;
+	background-repeat: no-repeat;
+}
+#page #main-page2 #user-failed #failed-message {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #666666;
+	float: left;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+#page #main-page2 #user-failed #error-message {
+	float: left;
+	margin-top: 5px;
+	font-weight: bold;
+	color: #FF0000;
+	width: 65%;
+	margin-left: 10px;
+}
+#page #main-page2 #user-enqueued {
+	display: none;
+}
+#page #main-page2 #user-failed {
+	display: none;
+}
+#page #main-page2 #progress-contact {
+	display: none;
+}
+#page #main-page2 #progress-emails {
+	display: none;
+}
+#page #main-page2 #estimated-time {
+	float: right;
+	width: 300px;
+	height: 15px;
+	margin-right: 9px;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: right;
+	color: #00789C;
+}
+#page #main-page2 #attachment-block .main-top-line .main-right-line .main-bottom-line .main-left-line .main-top-left .main-top-right .main-bottom-right .main-bottom-left .click-here {
+	color: #000000;
+	float: right;
+}
+#page #main-page2 #queue-place {
+	margin-top: 15px;
+	display: inline;
+	color: #CFA650;
+}
+
+
+a {
+	text-decoration: none;
+	display: block;
+	height: 100%;}

@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>Administration Page</title>
+
+
+
+<link href="/wizard_media/css/admin-style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript"  src="/wizard_media/js/jquery.js"></script>
+<script type="text/javascript" src="/wizard_media/js/validation.js"></script>
+<script type="text/javascript" src="/wizard_media/js/expantion.js"></script>
+</head>
+
+<body>
+	<div id="page-inner" >
+        <div id="header">
+        	<div id ="header-right">
+              <div id="logo">              </div>
+              <div id="text">              </div> 
+          </div>
+  	  </div>
+        
+        <div id="container">
+       	  <div id="left-sidebar">
+              <div id="page-title">
+                    Administration Page            </div>
+                <div id="menu-container">
+                  
+                    <li class="head">
+                            <a href="/wizard/admin/list/1/">All users</a>                    </li>
+                    <li class="head">
+                       <a href="/wizard/admin/fwd_add/1">Fwd addresses</a>                    </li>
+                    <li class="head"> States
+                        <ul class="main-menu"> 
+                            <li><a href="/wizard/admin/done_state/1">Done state</a></li>
+                            <li><a href="/wizard/admin/failed_state/1">Failed state</a></li>
+                            <li><a href="/wizard/admin/notstarted/1">Not started state</a></li>
+                            <li><a href="/wizard/admin/inqueue/1">Currently queued</a></li>
+                            <li><a href="/wizard/admin/inprogress/1">In progress state</a></li>
+                        </ul>
+                    </li>
+                    <li class="head"> <a href="/wizard/logout/">Logout</a> </li>                 
+                </div>
+          </div>
+            
+          <div id="main-page">
+          	<div id="main-page-top">
+            	<div id="subpage-title">           	    Account Summary                </div>
+   	  <form id="search-form"action="/wizard/admin/search/1/" method="post">
+        <div id="search_item">
+               	<input class="submit-button" type="submit" value="" />
+				    		<input class="submit-input" type="text" name="search_item" value="" />
+            </div>
+					</form>
+         	</div>
+                
+                
+              <div id="results-container2" class="clear">
+              
+           	  <form id="user-form">
+              
+           		<table class="account-sum-table" width="100%" border="0">
+                  <tr>
+                    <td class="odd">Username:</td>
+                    <td class="even">{{user_infos.username}}</td>
+                    <td class="odd">Groups added:</td>
+                    <td class="even">{{user_infos.groups_added}}</td>
+                    </tr>
+                  <tr>
+                    <td class="odd">Email:</td>
+                    <td class="even">{{user_infos.mail_fwd_address}}</td>
+                    <td class="odd">Mails uploaded:</td>
+                    <td class="even">{{user_infos.mails_uploaded}}</td>
+                    </tr>
+                    <tr>
+                    <td class="odd">Mobile number:</td>
+                    <td class="even">{{user_infos.mobile}}</td>
+                    <td class="odd">Emails bytes uploaded:</td>
+                    <td class="even">{{user_infos.emails_bytes_uploaded}}</td>
+                    </tr>
+                  <tr>
+                    <td class="odd">State:</td>
+                    <td class="even">{{user_infos.state}}</td>
+                    <td class="odd">Mails total:</td>
+                    <td class="even">{{user_infos.mails_total}}</td>
+                    </tr><tr>
+                    <td class="odd">Retry number:</td>
+                    <td class="even">{{user_infos.retry_number}}</td>
+                    <td class="odd">Offending mails count:</td>
+                    <td class="even">{{user_infos.offending_mails_count}}</td>
+                    </tr><tr>
+                    <td class="odd">Contacts added:</td>
+                    <td class="even">{{user_infos.contacts_added}}</td>
+                    <td class="odd">Nicknames:</td>
+                    <td class="even">{{user_infos.nicknames}}</td>
+                    </tr>
+                    
+                    <tr>
+                    <td class="odd">Contacts updated:</td>
+                    <td class="even">{{user_infos.contacts_updated}}</td>
+                    <td class="odd">Migration start time:</td>
+                    <td class="even">{{user_infos.migration_start_time}}</td>
+                    </tr>
+                    
+                    <tr>
+                    <td class="odd">Mailbox size:</td>
+                    <td class="even">{{user_infos.mail_box_size}}</td>
+                    <td class="odd">Migration end time:</td>
+                    <td class="even">{{user_infos.migration_end_time}}</td>
+                  </tr>
+                    
+
+                    
+                    <tr>
+                    <td class="odd">Contacts upload time:</td>
+                    <td class="even">{{user_infos.contacts_upload_time}}</td>
+                    <td class="odd">Emails upload time:</td>
+                    <td class="even">{{user_infos.emails_upload_time}}</td>
+                  </tr>
+                </table>
+           	  </form>
+           	  <table class="account-sum-table" width="100%" border="0">
+                  <tr>
+                  <div id="user-log" class="block-expansion-button"><a> &nbsp;</a> </div>
+                  <form method="post" action="/wizard/admin/user/{{username}}/">
+                   <input type="submit" value="" id="change_user_status"/> 
+                   </form>
+				 <input type="submit" value="" id="error-log"/>
+                 <br class="clear" />
+                 
+                    
+                </tr>
+                  </table>
+                  
+              <div id="on-expande" > {%if message %}{{message}} {% else %} There is no  user log yet {% endif %}</div>
+              <div id="on-expande-error"> {% if error_message %} {{error_message}} {%else%} There is no error log {%endif%}</div>
+            	</div>
+          </div>	
+        </div>
+    </div>
+</body>
+</html>

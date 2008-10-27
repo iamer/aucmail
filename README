@@ -1,0 +1,157 @@
+I. Scope:
+---------
+
+Google and The American University in Cairo (AUC) formed a partnership to 
+enhance the services provided by AUC to their students, faculty, staff, 
+and alumni. Google provided the AUC with access to the Google Apps platform. 
+This application was built to ease the email and contacts migration for each user. 
+
+II. Technical information:
+---------------------------
+
+This project is built using the django web framework 
+( www.djangoproject.com ) and python. 
+
+Dependencies:
+ 1. python v2.5
+ 2. python-ldap v2.3.1
+ 3. Django v0.96.1
+ 4. python-mysqldb v1.2.2
+ 5. python-gdata v1.1
+
+III. Code notes:
+----------------
+If you want to read the code this section will help you. It explains 
+where to find the stuff you're searching for.
+
+.
+|-- aucldapauth.py
+|      *Used to authenticate users on their own space where attachments 
+|     larger than 20 MB are stored.
+|
+|-- aucldapprotected
+|      *Apache configuration to secure attachments store directory.
+|
+|-- emails
+|   |     *A directory that contains HTML emails sent to the user after
+|   |    successful migration.
+|   |
+|   |-- pop_imap.png
+|   |-- technotes.html
+|   |     *Email sent to the user after successful migration.
+|   |
+|   `-- welcome.html
+|         *Email sent to the user after successful migration.
+|   
+|-- faqs.html
+|      *Static FAQ page that can be accessed anywhere in the site.
+|
+|-- help
+|      *A directory where static html help files are stored
+|
+|-- migrationwizard
+|   |  *Main django project.
+|   |
+|   |-- backends
+|   |   |    *Directory that contains authentication backends. Currently 
+|   |   |   only LDAP is supported.
+|   |   |
+|   |   `-- ldapbackend.py
+|   |        *Django authentication backend created to deal with LDAP 
+|   |       authentication. It also creates the user on Google's side and
+|   |       synchronizes his password.
+|   |
+|   |-- lib
+|   |   |-- adhocmailmigration.py
+|   |   |     *Contains a class used to interact with Google's email 
+|   |   |    migration API.
+|   |   |
+|   |   |-- contacts.py
+|   |   |     *The main module that starts the transfer of contacts for a certain 
+|   |   |    user. A function named start triggers the process.
+|   |   |
+|   |   |-- emails.py
+|   |   |     *The main module that starts the transfer of emails for a certain user
+|   |   |    . A function named start triggers the process.
+|   |   |
+|   |   |-- ldap_attribs.py
+|   |   |     *Contains functions used to manipulate various ldap options 
+|   |   |    for a specific user.
+|   |   |
+|   |   |-- ldif.py
+|   |   |      *A modified version of the default ldif module. Regex check 
+|   |   |     of DN was commented out.
+|   |   |
+|   |   `-- util.py
+|   |          *A python module that contains some utility functions.
+|   |
+|   |-- manage.py
+|   |-- media
+|   |   |   *Holds files that should be handled statically by django like 
+|   |   | css and javascript files.
+|   |   |
+|   |   `-- js
+|   |       |-- expantion.js
+|   |       |-- jquery.js
+|   |       |-- jqueryprogressbar.js
+|   |       |-- migration-progress.js
+|   |       |-- user_feedback.js
+|   |       |-- user_mobile.js
+|   |       `-- validation.js
+|   |-- ocsettings.py
+|   |      *The project is configurable through the usage of this file. 
+|   |     Anything like server ips, emails account .. etc is stored in this 
+|   |     file so it can be accessed globally through the project.
+|   |
+|   |-- settings.py
+|   |     *Django settings module.
+|   |
+|   |-- templates
+|   |   |   *Hold django html templates.
+|   |   |
+|   |   `-- progress.html
+|   |       *This page shows the progress of the migration process for the 
+|   |      user. It uses AJAX to update the page.
+|   |
+|   |-- urls.py
+|   |      *Django url handling module.
+|   |
+|   `-- wizard
+|       |      *Main Django application where all the magic happens.
+|       |
+|       |-- models.py
+|       |      *Contains 2 models Users_info and User_log. Users_info table 
+|       |     stores stuff that indicates the user state, like how many 
+|       |     emails he uploaded for instance.   User_log stores any 
+|       |     messages during the migration process for a specific user.
+|       |
+|       |-- sanitychecks.py
+|       |      *Contains different functions called to perform sanitychecks 
+|       |     on the mailbox we want to transfer.
+|       |
+|       `-- views.py
+|              *Main Django views files. This file contains functions called
+|             when accessing different URLs registered in urls.py file.
+|
+|-- runprocess.py
+|       *A script used to run transferuser.py. This is used to prevent 
+|      apache from owning the transferuser process 
+|
+`-- transferuser.py
+        *The main python script that does the actual migration for a user. 
+       This process runs in the background. 
+       Common usage:
+       python transferuser.py username
+       
+IV. Using the code:
+-------------------
+Some parts of the code are specific to AUC, other parts need 
+customization to make it work. 
+The main part that is specific to AUC is the
+LDAP authentication in:
+    *. aucldapauth.py
+    *. migrationwizard/backends/ldapbackend.py
+
+The main module to customize is:
+    *. migrationwizard/ocsettings.py
+

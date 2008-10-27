@@ -1,0 +1,33 @@
+{% extends "admin-index.html" %}
+{% block content %}
+{% if all_users_name %}
+                    <table>
+                          <tr class="first-row">
+                            <td>Username</td>
+                            <td>State</td>
+                            <td>Retry number</td>
+                            <td>Contacts total</td>
+                            <td>Mails total</td>
+                            <td>Migration start time</td>
+                            <td>Migration end time</td>
+                          </tr>
+                        {% for user in all_users_name %}
+                          <tr>
+                               <td class="first-col">  
+                               	<a href="/wizard/admin/user/{{user.id_id}}">{{user.username}}</a> 
+                              </td>
+                              <td>{{user.state}}</td>
+                              <td>{{user.retry_number}}</td>
+                              <td>{{user.contacts_total}}</td>
+                              <td>{{user.mails_total}}</td>
+                              <td>{{user.migration_start_time}}</td>
+                              <td>{{user.migration_end_time}}</td>
+ 
+                          </tr>
+                        {% endfor %}
+                      </table><br>
+  <br>
+  {% else %}
+  <h2>No users matched your search.</h2>
+  {% endif %}{{link}}
+{% endblock %}

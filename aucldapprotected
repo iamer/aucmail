@@ -1,0 +1,13 @@
+<Directory /var/www/aucldapprotected/*>
+    AddHandler mod_python .py 
+    PythonAuthenHandler aucldapauth
+    PythonDebug On 
+    AuthType Basic
+    AuthBasicAuthoritative Off
+    AuthName "Restricted Area"
+    require valid-user
+    Options Indexes
+    #ErrorDocument 401 /goaway.html
+    Header merge Cache-Control no-cache
+    Header merge Cache-Control no-store
+</Directory>
