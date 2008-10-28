@@ -25,7 +25,3 @@ http://aucmail.googlecode.com/svn/wiki/screenshots/welcome.png
 * Feedback form
 
 http://aucmail.googlecode.com/svn/wiki/screenshots/feedback.png
-
-* Admin page
-
-http://aucmail.googlecode.com/svn/wiki/screenshots/admin.png
