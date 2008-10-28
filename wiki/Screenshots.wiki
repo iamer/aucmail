@@ -1,0 +1,27 @@
+* Login Page:
+
+http://aucmail.googlecode.com/svn/wiki/screenshots/login.png
+
+* Before checks
+
+http://aucmail.googlecode.com/svn/wiki/screenshots/start.png
+
+* Checks
+
+http://aucmail.googlecode.com/svn/wiki/screenshots/checks.png
+
+* Waiting in queue
+
+http://aucmail.googlecode.com/svn/wiki/screenshots/queued.png
+
+* Migration in progress
+
+http://aucmail.googlecode.com/svn/wiki/screenshots/progress.png
+
+* Welcome to your new Mailbox!
+
+http://aucmail.googlecode.com/svn/wiki/screenshots/welcome.png
+
+* Feedback form
+
+http://aucmail.googlecode.com/svn/wiki/screenshots/feedback.png
